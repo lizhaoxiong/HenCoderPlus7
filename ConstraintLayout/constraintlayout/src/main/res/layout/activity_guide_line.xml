@@ -5,12 +5,12 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="120dp"
-        app:layout_constraintGuide_end="60dp"  />
+      android:id="@+id/guideline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_begin="125dp"
+      app:layout_constraintGuide_end="60dp" />
 
     <TextView
         android:id="@+id/tv_username"
@@ -36,11 +36,13 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/tv_username"
-        app:layout_constraintStart_toStartOf="@+id/guideline" />
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        android:layout_marginStart="20dp"/>
 
     <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/tv_password"
-        app:layout_constraintStart_toEndOf="@+id/tv_password" />
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        android:layout_marginStart="20dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
