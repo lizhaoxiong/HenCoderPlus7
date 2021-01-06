@@ -23,10 +23,10 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/earth"
-        app:layout_constraintCircleAngle="45"
-        app:layout_constraintCircleRadius="150dp"
         app:layout_constraintCircle="@id/sun"
-            />
+        app:layout_constraintCircleRadius="150dp"
+        app:layout_constraintCircleAngle="45"
+      />
 
 
     <androidx.appcompat.widget.AppCompatImageView
