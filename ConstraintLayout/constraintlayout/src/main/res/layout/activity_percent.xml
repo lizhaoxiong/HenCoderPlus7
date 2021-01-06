@@ -24,6 +24,7 @@
         android:src="@mipmap/ic_launcher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.6" />
+        app:layout_constraintWidth_percent="0.5"
+      />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
