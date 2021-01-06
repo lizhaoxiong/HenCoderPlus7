@@ -20,14 +20,14 @@ class Helpers : AppCompatActivity() {
 //        }
 
 
-        setContentView(R.layout.activity_layer)
-        findViewById<Button>(R.id.button).setOnClickListener {
-            findViewById<Layer>(R.id.layer).rotation = 45f
-            findViewById<Layer>(R.id.layer).translationY = 100f
-            findViewById<Layer>(R.id.layer).translationX = 100f
-        }
+//        setContentView(R.layout.activity_layer)
+//        findViewById<Button>(R.id.button).setOnClickListener {
+//            findViewById<Layer>(R.id.layer).rotation = 45f
+//            findViewById<Layer>(R.id.layer).translationY = 100f
+//            findViewById<Layer>(R.id.layer).translationX = 100f
+//        }
 //
-//        setContentView(R.layout.activity_barrier)
+        setContentView(R.layout.activity_barrier)
 
     }
 }
