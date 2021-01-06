@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:text="%"
             android:textSize="16sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textView1"
+            app:layout_constraintBaseline_toBaselineOf="@id/textView1"
             app:layout_constraintStart_toEndOf="@+id/textView1" />
 
 
