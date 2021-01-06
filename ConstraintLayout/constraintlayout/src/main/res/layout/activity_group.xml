@@ -20,7 +20,7 @@
             android:id="@+id/group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:constraint_referenced_ids="view,view1,view7,view8" />
+            app:constraint_referenced_ids="view,view1,view7,view8"/>
 
 
     <ImageView

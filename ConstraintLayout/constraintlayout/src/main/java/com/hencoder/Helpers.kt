@@ -13,10 +13,10 @@ class Helpers : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_group)
-//        findViewById<Button>(R.id.button).setOnClickListener {
-//            findViewById<Group>(R.id.group).visibility = View.GONE
-//        }
+        setContentView(R.layout.activity_group)
+        findViewById<Button>(R.id.button).setOnClickListener {
+            findViewById<Group>(R.id.group).visibility = View.GONE
+        }
 
 
 //        setContentView(R.layout.activity_layer)
@@ -26,7 +26,7 @@ class Helpers : AppCompatActivity() {
 //            findViewById<Layer>(R.id.layer).translationX = 100f
 //        }
 //
-        setContentView(R.layout.activity_barrier)
+//        setContentView(R.layout.activity_barrier)
 
     }
 }
