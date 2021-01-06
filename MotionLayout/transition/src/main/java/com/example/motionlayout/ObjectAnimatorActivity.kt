@@ -22,13 +22,11 @@ class ObjectAnimatorActivity : AppCompatActivity() {
 
   fun onClick(v: View) {
     TransitionManager.beginDelayedTransition(root)
-
-    with(v.layoutParams as FrameLayout.LayoutParams) {
+    with(v.layoutParams as FrameLayout.LayoutParams){
       gravity = Gravity.CENTER
       height *= 2
-      width *= 2
+      width *=2
     }
-
     v.requestLayout()
 
   }
