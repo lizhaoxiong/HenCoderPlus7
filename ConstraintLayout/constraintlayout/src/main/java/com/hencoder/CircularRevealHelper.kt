@@ -19,6 +19,7 @@ class CircularRevealHelper(context: Context, attrs: AttributeSet) : ConstraintHe
       ViewAnimationUtils.createCircularReveal(view, 0, 0, 0f, radius.toFloat())
         .setDuration(2000L)
         .start()
+
     }
   }
 }
