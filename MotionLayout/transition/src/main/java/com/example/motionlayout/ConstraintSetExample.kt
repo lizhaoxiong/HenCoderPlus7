@@ -1,11 +1,13 @@
 package com.example.motionlayout
 
+import android.os.Build.VERSION_CODES
 import android.os.Bundle
 import android.transition.TransitionManager
 import android.view.View
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
@@ -24,16 +26,30 @@ class ConstraintSetExample : AppCompatActivity(), View.OnClickListener {
 
     private var toggle = true
 
+    @RequiresApi(VERSION_CODES.KITKAT)
     override fun onClick(v: View?) {
+//        val root = findViewById<ConstraintLayout>(R.id.root)
+//        TransitionManager.beginDelayedTransition(root)
+//        val constraintSet = ConstraintSet()
+//        if (toggle) {
+//            constraintSet.clone(this, R.layout.activity_constraint_end)
+//        } else {
+//            constraintSet.clone(this, R.layout.activity_constraint_start)
+//        }
+//        constraintSet.applyTo(root)
+//        toggle = !toggle
+
+
         val root = findViewById<ConstraintLayout>(R.id.root)
         TransitionManager.beginDelayedTransition(root)
-        val constraintSet = ConstraintSet()
-        if (toggle) {
-            constraintSet.clone(this, R.layout.activity_constraint_end)
-        } else {
-            constraintSet.clone(this, R.layout.activity_constraint_start)
+        ConstraintSet().apply {
+            if(toggle){
+                clone(this@ConstraintSetExample, R.layout.activity_constraint_end)
+            }else{
+                clone(this@ConstraintSetExample, R.layout.activity_constraint_start)
+            }
+            applyTo(root)
+            toggle = !toggle
         }
-        constraintSet.applyTo(root)
-        toggle = !toggle
     }
 }
