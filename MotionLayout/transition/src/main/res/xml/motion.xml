@@ -10,16 +10,16 @@
             app:clickAction="toggle"
             app:targetId="@+id/fab_favourite" />
 
+<!--        app:touchRegionId="@+id/image_film_cover" 这个和OnClick冲突-->
         <OnSwipe
-            app:touchRegionId="@+id/image_film_cover"
+            app:touchAnchorId="@+id/image_film_cover"
             app:dragDirection="dragDown"
-            app:onTouchUp="stop"
+            app:onTouchUp="autoComplete"
             />
 
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
-
     </ConstraintSet>
 
 
