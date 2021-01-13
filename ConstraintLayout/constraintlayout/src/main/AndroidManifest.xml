@@ -21,6 +21,7 @@
         <activity android:name="com.hencoder.ConstraintSetX" />
         <activity android:name="com.hencoder.LinearActivity" />
         <activity android:name="com.hencoder.FlowActivity" />
+        <activity android:name="com.hencoder.DynamicLayout"/>
         <activity android:name="com.hencoder.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

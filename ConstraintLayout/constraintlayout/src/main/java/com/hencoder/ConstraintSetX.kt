@@ -10,43 +10,43 @@ import com.hencoder.constraintlayout.R
 
 class ConstraintSetX : AppCompatActivity() {
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_constraint_set)
-//    }
-//
-//
-//    fun onClick(view: View) {
-//        val constraintLayout = view as ConstraintLayout
-//        val constraintSet = ConstraintSet().apply {
-//            clone(constraintLayout)
-//            connect(
-//                R.id.twitter,
-//                ConstraintSet.BOTTOM,
-//                ConstraintSet.PARENT_ID,
-//                ConstraintSet.BOTTOM
-//            )
-//        }
-//        constraintSet.applyTo(constraintLayout)
-//    }
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_constraint_start)
+        setContentView(R.layout.activity_constraint_set)
     }
 
 
     fun onClick(view: View) {
         val constraintLayout = view as ConstraintLayout
-
         val constraintSet = ConstraintSet().apply {
-            isForceId = false
-            clone(this@ConstraintSetX,
-                R.layout.activity_constraint_end
+            clone(constraintLayout)
+            connect(
+                R.id.twitter,
+                ConstraintSet.BOTTOM,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.BOTTOM
             )
         }
-        TransitionManager.beginDelayedTransition(constraintLayout)
         constraintSet.applyTo(constraintLayout)
     }
+
+
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContentView(R.layout.activity_constraint_start)
+//    }
+//
+//
+//    fun onClick(view: View) {
+//        val constraintLayout = view as ConstraintLayout
+//
+//        val constraintSet = ConstraintSet().apply {
+//            isForceId = false
+//            clone(this@ConstraintSetX,
+//                R.layout.activity_constraint_end
+//            )
+//        }
+//        TransitionManager.beginDelayedTransition(constraintLayout)
+//        constraintSet.applyTo(constraintLayout)
+//    }
 }
