@@ -15,28 +15,29 @@
       app:layout_constraintBottom_toTopOf="@+id/textview"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
       android:id="@+id/textview"
       android:layout_width="wrap_content"
       android:layout_height="200dp"
+      android:layout_marginTop="30dp"
       android:background="@color/colorPrimary"
       android:text="长文本长文本长文本长文本长文本文本长文本长文本"
       android:textColor="@android:color/white"
-      app:layout_constraintVertical_chainStyle="packed"
-      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintBottom_toTopOf="@+id/view2"
       app:layout_constraintEnd_toEndOf="@+id/avatar"
       app:layout_constraintStart_toStartOf="@+id/avatar"
       app:layout_constraintTop_toBottomOf="@+id/avatar" />
+
 
     <ImageView
         android:id="@+id/view1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/ic_launcher"
-      app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/view2"
         app:layout_constraintStart_toStartOf="parent" />
