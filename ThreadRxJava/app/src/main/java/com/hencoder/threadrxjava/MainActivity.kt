@@ -28,26 +28,55 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    Single.just(1)
+    val retrofit = Retrofit.Builder()
+      .baseUrl("https://api.github.com/")
+      .addConverterFactory(GsonConverterFactory.create())
+      .addCallAdapterFactory(RxJava3CallAdapterFactory.createWithScheduler(Schedulers.io()))
+      .build()
+
+    val api = retrofit.create(Api::class.java)
+
+    api.getRepos("lizhaoxiong")
       .subscribeOn(Schedulers.io())
       .observeOn(AndroidSchedulers.mainThread())
-
-    Observable.interval(0, 1, TimeUnit.SECONDS)
-      .observeOn(AndroidSchedulers.mainThread())
-      .subscribe(object : Observer<Long?> {
-        override fun onComplete() {
+      .subscribe(object : SingleObserver<MutableList<Repo>> {
+        override fun onSuccess(t: MutableList<Repo>?) {
+          textView.text = "Result:${t!![0].name}"
         }
 
         override fun onSubscribe(d: Disposable?) {
+          disposable = d
+          textView.text = "正在请求"
         }
 
-        override fun onNext(t: Long?) {
-          textView.text = t.toString()
+        override fun onError(e: Throwable) {
+          textView.text = e.message ?: e.javaClass.name
         }
 
-        override fun onError(e: Throwable?) {
-        }
       })
+
+//    Single.just(1)
+//      .subscribeOn(Schedulers.io())
+//      .observeOn(AndroidSchedulers.mainThread())
+//
+//    Observable.interval(0, 1, TimeUnit.SECONDS)
+//      .observeOn(AndroidSchedulers.mainThread())
+//      .subscribe(object : Observer<Long?> {
+//        override fun onComplete() {
+//        }
+//
+//        override fun onSubscribe(d: Disposable?) {
+//        }
+//
+//        override fun onNext(t: Long?) {
+//          textView.text = t.toString()
+//        }
+//
+//        override fun onError(e: Throwable?) {
+//        }
+//      })
+//  }
+
   }
 
   override fun onDestroy() {
